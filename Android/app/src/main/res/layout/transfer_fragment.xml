@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_conta_verde" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        tools:text="\@joaovitorfreitas" />
+
+    <TextView
+        android:id="@+id/textViewFullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName"
+        tools:text="João Vitor Freitas" />
+
+    <EditText
+        android:id="@+id/editTextValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:hint="R$ 0,00"
+        android:inputType="numberDecimal"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewFullName"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFullName" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:checkedButton="@+id/radioButtonCreditCard"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextValue">
+
+        <RadioButton
+            android:id="@+id/radioButtonBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account balance" />
+
+        <RadioButton
+            android:id="@+id/radioButtonCreditCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Credit card" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonTransfer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Transfer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutCreditCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTransfer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutCardNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCardNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Card number"
+                android:inputType="number"
+                android:maxLength="16" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutCardholderName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCardNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCardholderName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Card holder name"
+                android:lines="1"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutExpiration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/textInputLayoutCVV"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayoutCardholderName"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCardholderName">
+
+            <!-- Expiration Date = considering only year -->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextExpiration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Expiration"
+                android:inputType="number"
+                android:maxLength="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutCVV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutCardholderName"
+            app:layout_constraintStart_toEndOf="@+id/textInputLayoutExpiration"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutCardholderName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCVV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="CVV"
+                android:inputType="number"
+                android:maxLength="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
