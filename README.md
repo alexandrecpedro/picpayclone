@@ -52,7 +52,9 @@ The following tools were used in building the project:<br><br>
   <img width =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" />
   <img width =' 100px ' src="https://insert-koin.io/img/koin_new_logo.png" />
   <img height =' 100px ' src="https://junit.org/junit5/assets/img/junit5-logo.png" />
+  <br>
   <img height=' 100px ' src="./Android/assets/Retrofit.jpeg" />
+  <br>
   <img height =' 100px ' src="./Android/assets/OkHttp.png" />
   <br>
   <h3>Backend | API</h3>
