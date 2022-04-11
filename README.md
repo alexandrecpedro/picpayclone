@@ -77,10 +77,10 @@ The following tools were used in building the project:<br><br>
     <br>
     <li>Step 2 - Building our API RESTful</li>
     API Architecture
-    <img src="./assets/api-architecture.png" alt="API Architecture">
+    <img src="./Android/assets/api-architecture.png" alt="API Architecture">
     <br>
     Classes Diagram for Database
-    <img src="./assets/classes-diagram.png" alt="Classes diagram">
+    <img src="./Android/assets/classes-diagram.png" alt="Classes diagram">
     <br>
     The API is based on RESTful model and contains:
     <ul>
