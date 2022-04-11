@@ -91,6 +91,7 @@ The following tools were used in building the project:<br><br>
       <li> Documentation with Swagger 2 </li>
       <li> Managing with Spring Actuator </li>
     </ul>
+    <br>
     <li>Step 3 - Building our Android app</li>
     The app follows MVVM pattern e shows the technologies of:
     <ul>
